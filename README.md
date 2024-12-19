@@ -15,11 +15,13 @@ Category: Labels indicating spam (1) or ham (0).
 Shuffling and Sampling: The dataset is shuffled, and only half the data is used for training/testing.
 Label Encoding: Labels are converted to numerical values (spam = 1, ham = 0).
 Train-Test Split: The dataset is split into 80% training and 20% testing data.
+
 2. Text Vectorization
 TF-IDF Vectorizer: Converts text data into numerical feature vectors by calculating term frequency-inverse document frequency (TF-IDF) values.
 Preprocessing includes:
 Lowercasing text.
 Removing English stop words.
+
 3. Model Architecture
 Model: A Sequential Neural Network with the following structure:
 Input Layer: 128 neurons, ReLU activation.
@@ -27,14 +29,17 @@ Dropout Layer: Regularization with a 50% dropout rate.
 Hidden Layer: 64 neurons, ReLU activation.
 Dropout Layer: Regularization with a 30% dropout rate.
 Output Layer: 1 neuron, Sigmoid activation for binary classification.
+
 4. Training the Model
 Loss Function: Binary Crossentropy.
 Optimizer: Adam with a learning rate of 0.001.
 Metrics: Accuracy.
 The model is trained for 10 epochs with a batch size of 32 and validation on the test set.
+
 5. Saving and Loading the Model
 The trained model is saved as spam_model_efficient.h5 for future use.
 The model can be reloaded using TensorFlow's load_model function.
+
 6. Model Evaluation
 Predictions are made on the test data, and probabilities are converted into binary classifications.
 
@@ -44,6 +49,7 @@ Precision
 Recall
 F1 Score
 7. User Input Classification
+
 The user can input a message to classify as spam or not spam.
 The message is preprocessed using the TF-IDF Vectorizer and passed to the trained model for prediction.
 Results
@@ -71,7 +77,8 @@ To use the pre-trained model provided (spam_model_efficient.h5):
 Ensure the file is in the correct directory.
 Uncomment the line model=load_model("/content/drive/MyDrive/spam_mail_project/spam_model_efficient.h5") in the notebook.
 Run the cell to load the model and proceed directly to evaluation and predictions.
-Future Enhancements
+
+Future Enhancements:
 Use advanced preprocessing techniques such as stemming and lemmatization.
 Train with a larger dataset for improved generalization.
 Experiment with alternative architectures like RNNs or Transformers for text classification.
